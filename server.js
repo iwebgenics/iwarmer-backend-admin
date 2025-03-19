@@ -34,8 +34,8 @@ app.get("/", (req, res) => {
     res.send("SMS: Server is running");
 });
 
-const PORT = process.env.PORT || 5007;
+const PORT = process.env.PORT || 5010;
 
-app.listen(5007, "0.0.0.0", () => {
-    console.log("Server running on port 5007");
+app.listen(5010, "0.0.0.0", () => {
+    console.log("Server running on port 5010");
   });
