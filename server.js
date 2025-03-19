@@ -14,15 +14,18 @@ const authRoutes = require("./routes/authRoutes");
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: [ 'https://admin.imailer.in/']
+}));
+
 
 // Mount routes
-app.use("/api/employee", employeeRoutes);
-app.use("/api/permissions", modifyPermissionsRoutes);
-app.use("/api/passkey", passkeyRoutes);
-app.use("/api/user", userRoutes);
-app.use("/api/stats", emailStatsRoutes);
-app.use("/api/auth", authRoutes);
+app.use("/api/iwarmer/employee", employeeRoutes);
+app.use("/api/iwarmer/permissions", modifyPermissionsRoutes);
+app.use("/api/iwarmer/passkey", passkeyRoutes);
+app.use("/api/iwarmer/user", userRoutes);
+app.use("/api/iwarmer/stats", emailStatsRoutes);
+app.use("/api/iwarmer/auth", authRoutes);
 
 // Add a route to print SMS
 app.get("/", (req, res) => {
